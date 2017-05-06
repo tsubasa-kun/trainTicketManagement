@@ -194,14 +194,14 @@
                     .then(res => {
                         console.log(res);
                         if (res.resStatus === 'success') {
-                            this.$router.go(-1);
+                            this.$router.push({path: '/index', query: {'selected': '1'}});
                         }
                         Utils.methods.showToast(res.resMsg);
                         Indicator.close();
                     });
             },
             cancel: function () {
-                this.$router.go(-1);
+                this.$router.push({path: '/index', query: {'selected': '1'}});
             }
         }
     }

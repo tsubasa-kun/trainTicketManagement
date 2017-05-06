@@ -9,7 +9,6 @@
             <mt-navbar v-model="selected">
                 <mt-tab-item id="1">车票管理</mt-tab-item>
                 <mt-tab-item id="2">用户管理</mt-tab-item>
-                <mt-tab-item id="3">用户联系人管理</mt-tab-item>
             </mt-navbar>
 
             <mt-tab-container v-model="selected">
@@ -18,9 +17,6 @@
                 </mt-tab-container-item>
                 <mt-tab-container-item id="2">
                     <v-user-manage></v-user-manage>
-                </mt-tab-container-item>
-                <mt-tab-container-item id="3">
-                    <v-member-manage></v-member-manage>
                 </mt-tab-container-item>
             </mt-tab-container>
         </div>
@@ -58,14 +54,13 @@
     import {Button, Navbar, TabItem, TabContainer, TabContainerItem} from 'mint-ui';
     import ticketManage from '../ticketManage/ticketManage.vue';
     import userManage from '../userManage/userManage.vue';
-    import memberManage from '../memberManage/memberManage.vue';
     import Api from '../../api';
     import Utils from '../../utils';
 
     export default {
         data(){
             return {
-                selected: '1'
+                selected: this.$route.query.selected,
             }
         },
         created() {
@@ -80,8 +75,7 @@
             [TabContainer.name]: TabContainer,
             [TabContainerItem.name]: TabContainerItem,
             'v-ticket-manage': ticketManage,
-            'v-user-manage': userManage,
-            'v-member-manage': memberManage
+            'v-user-manage': userManage
         },
         methods: {
             doLogout: function () {

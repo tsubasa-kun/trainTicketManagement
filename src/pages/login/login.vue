@@ -73,7 +73,7 @@
                         .then(res => {
                             if (res.resStatus === 'success') {
                                 $.session.set('admin_id', res.userId);
-                                this.$router.push('/index');
+                                this.$router.push({path: '/index', query: {'selected': '1'}});
                             } else {
                                 Utils.methods.showToast(res.resMsg);
                             }
