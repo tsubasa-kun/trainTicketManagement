@@ -9,6 +9,7 @@
             <mt-navbar v-model="selected">
                 <mt-tab-item id="1">车票管理</mt-tab-item>
                 <mt-tab-item id="2">用户管理</mt-tab-item>
+                <mt-tab-item id="3">订单浏览</mt-tab-item>
             </mt-navbar>
 
             <mt-tab-container v-model="selected">
@@ -17,6 +18,9 @@
                 </mt-tab-container-item>
                 <mt-tab-container-item id="2">
                     <v-user-manage></v-user-manage>
+                </mt-tab-container-item>
+                <mt-tab-container-item id="3">
+                    <v-order-look></v-order-look>
                 </mt-tab-container-item>
             </mt-tab-container>
         </div>
@@ -54,6 +58,7 @@
     import {Button, Navbar, TabItem, TabContainer, TabContainerItem} from 'mint-ui';
     import ticketManage from '../ticketManage/ticketManage.vue';
     import userManage from '../userManage/userManage.vue';
+    import orderLook from '../orderLook/orderLook.vue';
     import Api from '../../api';
     import Utils from '../../utils';
 
@@ -75,7 +80,8 @@
             [TabContainer.name]: TabContainer,
             [TabContainerItem.name]: TabContainerItem,
             'v-ticket-manage': ticketManage,
-            'v-user-manage': userManage
+            'v-user-manage': userManage,
+            'v-order-look': orderLook
         },
         methods: {
             doLogout: function () {

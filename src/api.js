@@ -1,7 +1,7 @@
 /**
  * Created by xiekun on 2017/4/12 0012.
  */
-global.DOMAIN = 'http://192.168.1.5:8080';
+global.DOMAIN = 'http://192.168.1.11:8080';
 global.SERVER_URL = global.DOMAIN + '/TrainTicketServer/servlet/';
 export default {
     ADMIN_LOGIN: global.SERVER_URL + 'AdminLoginServlet',//登录
@@ -13,4 +13,5 @@ export default {
     ADD_USER: global.SERVER_URL + 'AddUserServlet',//添加用户
     DELETE_USER: global.SERVER_URL + 'DeleteUserServlet',//删除用户
     MODIFY_USER: global.SERVER_URL + 'ModifyUserServlet',//修改用户
+    QUERY_ALL_ORDER: global.SERVER_URL + 'QueryAllOrderServlet'//查询所有订单
 }
